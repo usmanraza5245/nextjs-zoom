@@ -23,14 +23,6 @@ function ZoomPage() {
             zoomAppRoot: meetingSDKElement,
           });
           const payload = router.query;
-          //   console.log("meeting...", searchParams);
-          //   console.log("router query", router.query);
-          //   const payload = {
-          //     meetingNumber: searchParams.get("meetingNumber"),
-          //     userName: searchParams.get("userName"),
-          //     role: 0,
-          //     password: searchParams.get("password"),
-          //   };
           console.log("payload", payload);
           const { data } = await axios
             .post("/api/zoom", payload)
