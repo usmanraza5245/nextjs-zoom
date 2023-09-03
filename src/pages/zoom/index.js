@@ -7,7 +7,7 @@ import router from "next/router";
 function ZoomPage() {
   const searchParams = useSearchParams();
   useEffect(() => {
-    return async () => {
+    const meetingSetup = async () => {
       new Promise(async (resolve, reject) => {
         const zoomEmbed = await (
           await import("@zoomus/websdk/embedded")
@@ -46,6 +46,8 @@ function ZoomPage() {
           console.log("error inside client useeffect", err);
         });
     };
+
+    meetingSetup();
   }, []);
   return (
     <div className={styles.container}>
